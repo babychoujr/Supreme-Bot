@@ -113,17 +113,17 @@ def add_cart(product_id, style_id, size_id):
 
     return add_cart
 
+if __name__ == "__main__":
+    supreme_js = find_supreme_json()
 
-supreme_js = find_supreme_json()
+    item_id = find_item_id(supreme_js, 'Jackets', 'GORE-TEX')
 
-item_id = find_item_id(supreme_js, 'Jackets', 'GORE-TEX')
+    style_id = find_style_id(item_id, 'Light Olive')
 
-style_id = find_style_id(item_id, 'Light Olive')
+    size_id = find_size_id(item_id, 'Light Olive', 'Large')
 
-size_id = find_size_id(item_id, 'Light Olive', 'Large')
+    print("ITEM_ID: ", item_id)
+    print("STYLE_ID: ", style_id)
+    print("SIZE_ID: ", size_id)
 
-print("ITEM_ID: ", item_id)
-print("STYLE_ID: ", style_id)
-print("SIZE_ID: ", size_id)
-
-print(add_cart(item_id, style_id, size_id))
+    print(add_cart(item_id, style_id, size_id))
